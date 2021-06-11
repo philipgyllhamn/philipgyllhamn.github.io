@@ -4,7 +4,7 @@ var ztxt = new Ztextify(".hero-text", {
     fade: true,
     direction: "forwards",
     event: "pointer",
-    eventRotation: "10deg"
+    eventRotation: "12deg"
  });
 
 function initCartizer(){
@@ -33,31 +33,40 @@ function copyText(){
 }
 
 function cartize(input){
-	var newString = "";
+  var newString = "";
   var wordArr = input.split(" ");
   
   wordArr.map(word => {
     var randomNumWord = Math.floor((Math.random() * 9) + 1);
-    
-    for (var i = 0; i < word.length; i++) {
-    	var randomNumChar = Math.floor((Math.random() * 2) + 1);
-      var char = word.charAt(i);
-      
-      if(i === 0){
-        newString += char.toLowerCase();
-      }else if(char === "e" || char === "E"){
-      	newString += "3";
-      }else if(char === "o" || char === "O"){
-      	newString += "0";
-      }else{
-      	if(randomNumChar === 2){
-      		newString += char.toUpperCase();
-      	}else{
-      		newString += char.toLowerCase();
-      	}
-      }
-      
+
+    if(word === "for" && randomNumWord != 5){
+        newString += "4";
+    }else{
+        for (var i = 0; i < word.length; i++) {
+            var randomNumChar = Math.floor((Math.random() * 2) + 1);
+          var char = word.charAt(i);
+          var nextChar = word.charAt(i+1);
+          var prevChar = word.charAt(i-1)
+
+          if(i === 0){
+            newString += char.toLowerCase();
+          }else if((char === "e" || char === "E") && randomNumChar === 2){
+              newString += "3";
+          }else if(char === "o" || char === "O"){
+              newString += "0";
+          }else if(char.toUpperCase() === nextChar.toUpperCase() || char.toUpperCase() === prevChar.toUpperCase()){
+                newString += char.toUpperCase();
+          }else{
+              if(randomNumChar === 2){
+                  newString += char.toUpperCase();
+              }else{
+                  newString += char.toLowerCase();
+              }
+          }
+
+        }
     }
+    
     
     if(randomNumWord === 2){
     	newString += " . ";
@@ -70,7 +79,7 @@ function cartize(input){
     }
   })
   
-  var randomEmojiNum = Math.floor((Math.random() * 15) + 1);
+  var randomEmojiNum = Math.floor((Math.random() * 11) + 1);
   
   if(randomEmojiNum === 5){
   	newString += " &#128139"

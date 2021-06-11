@@ -43,8 +43,6 @@ function cartize(input){
     	var randomNumChar = Math.floor((Math.random() * 2) + 1);
       var char = word.charAt(i);
       
-      console.log(randomNumChar)
-      
       if(i === 0){
         newString += char.toLowerCase();
       }else if(char === "e" || char === "E"){

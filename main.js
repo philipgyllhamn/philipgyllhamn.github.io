@@ -7,6 +7,11 @@ var ztxt = new Ztextify(".hero-text", {
     eventRotation: "12deg"
  });
 
+/*
+	HI WHOEVER YOU ARE 
+	website made by https://github.com/philipgyllhamn
+*/
+
 function initCartizer(){
 	var value = document.getElementById("carti").value;
 

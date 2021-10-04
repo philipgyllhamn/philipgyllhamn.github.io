@@ -9,6 +9,8 @@ var ztxt = new Ztextify(".hero-text", {
 
 function initCartizer(){
 	var value = document.getElementById("carti").value;
+
+    if(value == "" || value == null) return;
 	var carti = this.cartize(value);
   
     document.getElementById("text").innerHTML = carti;

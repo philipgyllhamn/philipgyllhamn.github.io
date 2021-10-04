@@ -14,12 +14,19 @@ body{
     margin: 0 auto;
     display: flex;
     text-align: center;
+    font-family: monospace;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 100vh;
+    width: 100vw;
 }
 
 .mainDiv{
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+    padding: 10px;
 }
 
 .input-field{
@@ -61,19 +68,20 @@ h1 {
     box-sizing: border-box;
   }
   
-  body {
+  /* body {
     height: 100vh;
     margin: 0 auto;
     display: grid;
     place-items: center;
     padding: calc(var(--space) * 2);
     max-width: 700px;
-  }
+  } */
   
   .multi-button {
     display: flex;
     width: 100%;
     box-shadow: var(--shadow) 4px 4px;
+    flex-wrap: wrap;
   }
   
   .multi-button button {

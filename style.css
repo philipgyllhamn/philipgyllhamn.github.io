@@ -95,7 +95,8 @@ h1 {
     border: var(--border-size) solid black;
     color: var(--color-secondary);
     background-color: var(--color-primary);
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
+    font-size: larger;
     font-family: var(--font-family);
     text-transform: lowercase;
     text-shadow: var(--shadow) 2px 2px;

@@ -114,7 +114,7 @@ async function Log(text){
         headers: {'Content-Type': 'application/json'}, 
         body: JSON.stringify(data)
       }).then(res => {
-        console.log("Request complete! response:", res);
+        // console.log("Request complete! response:", res);
       });
 }
 

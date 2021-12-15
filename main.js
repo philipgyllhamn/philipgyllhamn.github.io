@@ -128,7 +128,7 @@ async function Log(text){
 
 function ticker(){
     var inter = setInterval(() => {
-        if(timer == 60){
+        if(timer == 30){
             timer = 0;
             clearInterval(inter);
         }else{
@@ -136,7 +136,7 @@ function ticker(){
         }
     }, 1000)
 
-    if(timer >= 60){
+    if(timer >= 30){
         clearInterval(inter);
         timer = 0;
     }

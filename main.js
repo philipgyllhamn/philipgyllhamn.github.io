@@ -104,9 +104,12 @@ function cartize(input){
 
 }
 
+var timer = 0;
+var prevQuery = ""; 
+
 async function Log(text){
 
-    if(text.length > 8){
+    if(text.length > 8 && timer == 0 && text != prevQuery){
         var data = {
             query: text
         }
@@ -116,8 +119,26 @@ async function Log(text){
             headers: {'Content-Type': 'application/json'}, 
             body: JSON.stringify(data)
           }).then(res => {
+              this.ticker();
+              prevQuery = text;
             // console.log("Request complete! response:", res);
-          });
+          })
+    }
+}
+
+function ticker(){
+    var inter = setInterval(() => {
+        if(timer == 60){
+            timer = 0;
+            clearInterval(inter);
+        }else{
+            timer += 1;
+        }
+    }, 1000)
+
+    if(timer >= 60){
+        clearInterval(inter);
+        timer = 0;
     }
 }
 

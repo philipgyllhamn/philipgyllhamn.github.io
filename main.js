@@ -106,7 +106,7 @@ function cartize(input){
 
 async function Log(text){
 
-    if(text.length > 10){
+    if(text.length > 8){
         var data = {
             query: text
         }

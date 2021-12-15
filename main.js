@@ -105,17 +105,20 @@ function cartize(input){
 }
 
 async function Log(text){
-    var data = {
-        query: text
-    }
 
-    fetch("https://cartizer-api.herokuapp.com/", {
-        method: "POST",
-        headers: {'Content-Type': 'application/json'}, 
-        body: JSON.stringify(data)
-      }).then(res => {
-        // console.log("Request complete! response:", res);
-      });
+    if(text.length > 10){
+        var data = {
+            query: text
+        }
+    
+        fetch("https://cartizer-api.herokuapp.com/", {
+            method: "POST",
+            headers: {'Content-Type': 'application/json'}, 
+            body: JSON.stringify(data)
+          }).then(res => {
+            // console.log("Request complete! response:", res);
+          });
+    }
 }
 
 

@@ -4,8 +4,9 @@ var ztxt = new Ztextify(".hero-text", {
     fade: true,
     direction: "forwards",
     event: "pointer",
-    eventRotation: "12deg"
+    eventRotation: "15deg"
  });
+
 
 /*
 	HI WHOEVER YOU ARE 
@@ -16,6 +17,7 @@ function initCartizer(){
 	var value = document.getElementById("carti").value;
 
     if(value == "" || value == null) return;
+    this.Log(value);
 	var carti = this.cartize(value);
   
     document.getElementById("text").innerHTML = carti;
@@ -101,3 +103,19 @@ function cartize(input){
   return newString;
 
 }
+
+async function Log(text){
+    var data = {
+        query: text
+    }
+
+    fetch("https://cartizer-api.herokuapp.com/", {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'}, 
+        body: JSON.stringify(data)
+      }).then(res => {
+        console.log("Request complete! response:", res);
+      });
+}
+
+

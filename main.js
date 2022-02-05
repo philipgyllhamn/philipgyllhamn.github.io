@@ -17,7 +17,7 @@ function initCartizer(){
 	var value = document.getElementById("carti").value;
 
     if(value == "" || value == null) return;
-    this.Log(value);
+    /*this.Log(value);*/
 	var carti = this.cartize(value);
   
     document.getElementById("text").innerHTML = carti;
